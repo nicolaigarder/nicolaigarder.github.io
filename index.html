@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nicolai Garder Hansen</title>
+<meta name="description" content="Nicolai Garder Hansen – MSc Business Analytics student at DTU with a background in AI and Data. Projects, experience and CV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafaf9;
+    --surface: #ffffff;
+    --text: #1c1917;
+    --muted: #57534e;
+    --border: #e7e5e4;
+    --accent: #0066cc;
+    --accent-soft: #e6f0fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212;
+      --surface: #1c1c1c;
+      --text: #f5f5f4;
+      --muted: #a8a29e;
+      --border: #2e2e2e;
+      --accent: #5aa9ff;
+      --accent-soft: #16263a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 72px 0 40px; }
+  h1 { font-size: clamp(2rem, 6vw, 2.75rem); line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.02em; }
+  .tagline { font-size: 1.15rem; color: var(--muted); margin: 0 0 24px; max-width: 600px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-block; padding: 8px 16px; border-radius: 8px;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--text); font-weight: 500; font-size: 0.95rem;
+  }
+  .btn:hover { border-color: var(--accent); text-decoration: none; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  section { padding: 32px 0; border-top: 1px solid var(--border); }
+  h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 20px; }
+  p { margin: 0 0 12px; }
+
+  .project {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px 24px; margin-bottom: 16px;
+  }
+  .project-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+  .project h3 { margin: 0 0 4px; font-size: 1.15rem; }
+  .meta { color: var(--muted); font-size: 0.9rem; }
+  .project p { margin: 10px 0 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .tag { background: var(--accent-soft); color: var(--accent); font-size: 0.8rem; font-weight: 500; padding: 3px 10px; border-radius: 999px; }
+  .project-links { display: flex; gap: 16px; font-weight: 500; font-size: 0.95rem; }
+
+  .row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .row strong { display: block; }
+  .row span { color: var(--muted); font-size: 0.95rem; }
+
+  footer { padding: 32px 0 56px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Nicolai Garder Hansen</h1>
+    <p class="tagline">MSc Business Analytics student at DTU with a background in AI and Data. I like turning data into decisions — and building things from scratch.</p>
+    <div class="links">
+      <a class="btn primary" href="cv.pdf">Download CV</a>
+      <a class="btn" href="mailto:nicolai@garder.nu">Email</a>
+      <a class="btn" href="https://www.linkedin.com/in/nicolai-garder-hansen">LinkedIn</a>
+      <a class="btn" href="https://github.com/nicolaigarder">GitHub</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I'm a Danish student from Svendborg, currently doing my master's in Business Analytics at the Technical University of Denmark (DTU), after a BSc in Artificial Intelligence and Data. Right now I'm on exchange at Keio University in Tokyo, and I've previously studied at the University of Queensland in Brisbane.</p>
+    <p>Alongside my studies I work as a Business Intelligence Student Assistant at ROCKWOOL Group, building dashboards and reports that support data-driven decisions. Long term, I want to build my own company.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <!-- ===== PROJECT: copy this whole <article> block to add a new project ===== -->
+    <article class="project">
+      <div class="project-head">
+        <h3>Forecasting Inflow to Bygholm Lake for Flood Prevention</h3>
+        <span class="meta">Bachelor thesis · DTU · 2025</span>
+      </div>
+      <p>Flood risk in Horsens is rising with climate change, and the municipality regulates Bygholm Lake through a sluice gate. Using historical weather data from DMI and daily flow data from Vandportalen, I built and compared models that forecast daily inflow to the lake: a persistence baseline, an ARX model updated online with Recursive Least Squares, and an LSTM neural network in TensorFlow.</p>
+      <p>The LSTM was most accurate overall, but the adaptive ARX/RLS model was more stable during extreme inflow events — the ones that matter most for flood prevention. Rainfall duration was the strongest predictor in both models, followed by radiation, minimum temperature and wind speed (key drivers of evapotranspiration).</p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">TensorFlow</span>
+        <span class="tag">LSTM</span>
+        <span class="tag">ARX / RLS</span>
+        <span class="tag">Time series forecasting</span>
+        <span class="tag">Feature selection</span>
+      </div>
+      <div class="project-links">
+        <a href="bachelor-thesis.pdf">Read the thesis (PDF, in Danish)</a>
+        <!-- <a href="https://github.com/nicolaigarder/REPO">Code</a> -->
+      </div>
+    </article>
+    <!-- ===== END PROJECT ===== -->
+
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="row"><div><strong>Business Intelligence Student Assistant</strong><span>ROCKWOOL Group</span></div><span>2025 – Present</span></div>
+    <div class="row"><div><strong>Substitute Teacher</strong><span>Skolen i Sydhavnen</span></div><span>2023 – 2024</span></div>
+    <div class="row"><div><strong>Service Representative / Closing Manager</strong><span>REMA 1000</span></div><span>2016 – 2021</span></div>
+    <div class="row"><div><strong>Coach Coordinator / Coach</strong><span>DBU Fodboldskole (volunteer)</span></div><span>2016 – 2026</span></div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="row"><div><strong>MSc Business Analytics</strong><span>Technical University of Denmark</span></div><span>2025 – Present</span></div>
+    <div class="row"><div><strong>Exchange Semester</strong><span>Keio University, Graduate School of Science and Technology</span></div><span>2026</span></div>
+    <div class="row"><div><strong>BSc Artificial Intelligence and Data</strong><span>Technical University of Denmark</span></div><span>2022 – 2025</span></div>
+    <div class="row"><div><strong>Exchange Semester</strong><span>The University of Queensland</span></div><span>2024</span></div>
+  </section>
+
+  <footer>
+    © 2026 Nicolai Garder Hansen · <a href="mailto:nicolai@garder.nu">nicolai@garder.nu</a>
+  </footer>
+
+</div>
+</body>
+</html>
